@@ -1,0 +1,21 @@
+<html>
+<body>
+  <button onclick="controlarLED(1)">APARATO 1 ESTADO )"" + led1Estado + R""(</button>
+  <button onclick="controlarLED(2)">APARATO 2 ESTADO )"" + led2Estado + R""(</button>
+  <button onclick="controlarLED(3)">APARATO 3 ESTADO )"" + led3Estado + R""(</button>
+  <a href="/" target="_self" rel="noopener noreferrer"><button>CERRAR SESION</button></a>
+  <script>
+    function controlarLED(led) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          // Actualizar la página después de controlar el LED
+          location.reload();
+        }
+      };
+      xhttp.open("GET", "/controlarLED?led=" + led, true);
+      xhttp.send();
+    }
+  </script>
+</body>
+</html>
