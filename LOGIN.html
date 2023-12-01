@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.1">
     <script src="https://kit.fontawesome.com/892f23a568.js" crossorigin="anonymous"></script>
-    <title>HOUSE</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>LOGIN HOUSE</title>
 </head>
 <body>
-
   <style>
 
 body {
@@ -19,12 +17,12 @@ body {
   align-items: center;
   justify-content: center;
   background: url('https://drive.google.com/uc?export=download&id=1k1ah7Ou1dCBt4xB910juAncKkpD-S0XU') no-repeat fixed;
-  background-size: cover;
+		background-size: cover;
 }
 
-@media (max-width: 450px) {
-  .contenedor {
-    width: 80%;
+@media (max-width: 480px) {
+  body{
+    width: 100%;
   }
 }
 
@@ -38,7 +36,7 @@ body {
 
 .tarjeta{
   height: 400px;
-  width: 350px;
+  width: 400px;
   background-color: #101010;
   border-radius: 10%;
   box-shadow: 16px 14px 20px #0000008c;
@@ -52,9 +50,9 @@ body {
 .tarjeta::before{
   content: "";
   position: absolute;
-  height: 500px;
-  width: 500px;
-  background-image: conic-gradient(red 20deg, transparent 120deg);
+  height: 600px;
+  width: 600px;
+  background-image: conic-gradient(red 40deg, transparent 120deg);
   animation: rotar 2.3s linear infinite;
 }
 
@@ -76,14 +74,14 @@ body {
   content: "";
   position: absolute;
   height: 390px;
-  width: 340px;
+  width: 390px;
   background-color: #101010;
   border-radius: 10%;
   box-shadow: inset 16px 14px 20px #0000008c;;
 }
 .informacion{
-  height: 380px;
-  width: 320px;
+  height:380px;
+  width: 340px;
   background-color: #101010;
   border-radius: 10%;
   position: relative;
@@ -126,7 +124,7 @@ body {
   box-shadow: 6px 6px 20px 0px rgb(2, 23, 255);
   font-size: 18px;
   background-color: transparent;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 .contrasena:focus{
   z-index: 1;
@@ -167,8 +165,9 @@ body {
   color: red;
   background-color: transparent;
   top: 80px;
-  font-size: 20px;
-  letter-spacing: 1px;
+  font-size: 24px;
+  letter-spacing: 1.5px;
+		animation: textorgb 1.5s infinite alternate-reverse;
 }
 .fa-house-lock{
   position: absolute;
@@ -176,20 +175,26 @@ body {
   color: #000000;
   background-color: transparent;
   top: 10px;
-  font-size: 60px;
+  font-size: 70px;
   animation: principal 1.5s alternate-reverse infinite;
 }
-
 @keyframes principal{
   0%{text-shadow: 5px 5px 5px rgb(255, 0, 0);}
   33%{text-shadow: 5px 6px 7px rgb(255, 0, 0);}
   33%{text-shadow: 5px 6px 7px blue;}
   66%{text-shadow: 5px 6px 7px blue;}
-  66%{text-shadow: 5px 6px 7px rgb(106, 255, 0);}
-  100%{text-shadow: 1px 1px 1px rgb(106, 255, 0);}
+		 66%{text-shadow: 5px 6px 7px rgb(106, 255, 0);}
+  100%{text-shadow: 1px 1px 1px pink;}
 }
-
-
+		@keyframes textorgb{
+  0%{color: red;}
+  33%{color: red;}
+  33%{color: blue;}
+  66%{color: blue;}
+  66%{color:rgb(106, 255, 0);  text-shadow:  1px 1px 1px black;  }
+				100%{text-shadow: 1px 1px 1px pink; color: black;}
+		}
+		
 .enviar{
   position: absolute;
   z-index: 1;
@@ -207,6 +212,7 @@ body {
   font-style: oblique ;
   font-weight: bold;
 } 
+		
 .enviar:hover {
   color: rgb(6, 250, 55);
   box-shadow: 4px 4px 15px blue;
@@ -221,7 +227,7 @@ body {
   top: 10px;
   font-size: 25px;
   left: 25px;
-  top: 242px;
+  top: 245px;
 }
 #showPassword{
   position: absolute;
@@ -229,8 +235,9 @@ body {
   color: red;
   background-color: transparent;
   top: 10px;
-  left: 30px;
-  top: 282px;
+  left: 75px;
+  top: 287px;
+		transform: scale(1.2);
 }
 .mostrarc{
   position: absolute;
@@ -238,17 +245,16 @@ body {
   color: rgb(255, 255, 255);
   background-color: transparent;
   top: 10px;
-  font-size: 15px;
-  left: 65px;
-  top: 268px;
+  font-size: 18px;
+  left: 105px;
+  top: 272px;
 }
   </style>
-
   <div class="contenedor">
     <form action='/login' method='get'>
       <div class="tarjeta"> 
         <div class="informacion">
-          <h2 class="texto">BIENVENIDO</h2>
+          <h2 class="texto">LOGIN HOUSE</h2>
           <i class="fas fa-house-lock"></i>
           <i class="fas fa-user-gear"></i>
           <input type="text" id="usuario" class="usuario" placeholder="USUARIO" name="usuario" required autocomplete="off">
@@ -256,8 +262,10 @@ body {
           <input type="password" id="password" class="contrasena" placeholder="CONTRASEÑA" name="key" required>
           <i class="fas fa-arrow-right-to-bracket"></i>
           <button type="submit" class="enviar">INICIAR SESION</button>
+        		<label>
           <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()">
           <p class="mostrarc">MOSTRAR CONTRASEÑA</p>
+        		</label>
         </div>
       </div>
     </form>
@@ -266,7 +274,7 @@ body {
     function togglePasswordVisibility() {
         var passwordInput = document.getElementById("password");
         var showPasswordCheckbox = document.getElementById("showPassword");
-  
+
         if (showPasswordCheckbox.checked) {
             passwordInput.type = "text";
         } else {
