@@ -249,7 +249,19 @@ body {
   left: 105px;
   top: 272px;
 }
+		#loading-message {
+				position: absolute;
+				z-index:2;
+      background-color: black;
+      padding: 20px;
+      border-radius: 10px;
+				  height: 800px;
+			  	width: 600px;
+      font-size: 30px;
+	  			color: white;
+}
   </style>
+<div id="loading-message">Loading, please wait...</div>
   <div class="contenedor">
     <form action='/login' method='get'>
       <div class="tarjeta"> 
@@ -281,6 +293,14 @@ body {
             passwordInput.type = "password";
         }
     }
+      document.addEventListener("DOMContentLoaded", function () {
+      var loadingMessage = document.getElementById("loading-message");
+      loadingMessage.style.display = "block";
+  		
+      window.addEventListener("load", function () {
+      loadingMessage.style.display = "none";
+    });
+  });
   </script>  
 </body>
 </html>
