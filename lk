@@ -17,7 +17,7 @@ body {
   align-items: center;
   justify-content: center;
   background: url('https://drive.google.com/uc?export=download&id=1k1ah7Ou1dCBt4xB910juAncKkpD-S0XU') no-repeat fixed;
-	background-size: cover;
+        background-size: cover;
 }
 
 @media (max-width: 480px) {
@@ -167,7 +167,7 @@ body {
   top: 80px;
   font-size: 24px;
   letter-spacing: 1.5px;
-		animation: textorgb 1.5s infinite alternate-reverse;
+                animation: textorgb 1.5s infinite alternate-reverse;
 }
 .fa-house-lock{
   position: absolute;
@@ -183,18 +183,18 @@ body {
   33%{text-shadow: 5px 6px 7px rgb(255, 0, 0);}
   33%{text-shadow: 5px 6px 7px blue;}
   66%{text-shadow: 5px 6px 7px blue;}
-		 66%{text-shadow: 5px 6px 7px rgb(106, 255, 0);}
+                 66%{text-shadow: 5px 6px 7px rgb(106, 255, 0);}
   100%{text-shadow: 1px 1px 1px pink;}
 }
-		@keyframes textorgb{
+                @keyframes textorgb{
   0%{color: red;}
   33%{color: red;}
   33%{color: blue;}
   66%{color: blue;}
   66%{color:rgb(106, 255, 0);  text-shadow:  1px 1px 1px black;  }
-				100%{text-shadow: 1px 1px 1px pink; color: black;}
-		}
-		
+                                100%{text-shadow: 1px 1px 1px pink; color: black;}
+                }
+
 .enviar{
   position: absolute;
   z-index: 1;
@@ -212,7 +212,7 @@ body {
   font-style: oblique ;
   font-weight: bold;
 } 
-		
+
 .enviar:hover {
   color: rgb(6, 250, 55);
   box-shadow: 4px 4px 15px blue;
@@ -237,7 +237,7 @@ body {
   top: 10px;
   left: 75px;
   top: 287px;
-		transform: scale(1.2);
+                transform: scale(1.2);
 }
 .mostrarc{
   position: absolute;
@@ -249,7 +249,17 @@ body {
   left: 105px;
   top: 272px;
 }
-#loading-message {
+		
+		#loading-message {
+				position: absolute;
+				z-index:2;
+      background-color: black;
+				  height: 100%;
+			  	width: 100%;
+      font-size: 30px;
+	  			color: white;
+}
+.container {
   position: absolute;
   z-index:2;
   background-color: black;
@@ -277,13 +287,12 @@ body {
   left:-.3px;
   width: 100%;
   height: 100%;
-
-
 }
 
 
   </style>
-<div id="loading-message">Loading <span></span> </div>
+<div id="loading-message">
+		<div class="container">Loading <span></span> </div></div>
   <div class="contenedor">
     <form action='/login' method='get'>
       <div class="tarjeta"> 
@@ -296,10 +305,10 @@ body {
           <input type="password" id="password" class="contrasena" placeholder="CONTRASEÑA" name="key" required>
           <i class="fas fa-arrow-right-to-bracket"></i>
           <button type="submit" class="enviar">INICIAR SESION</button>
-        		<label>
+                        <label>
           <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()">
           <p class="mostrarc">MOSTRAR CONTRASEÑA</p>
-        		</label>
+                        </label>
         </div>
       </div>
     </form>
@@ -319,7 +328,7 @@ body {
       document.addEventListener("DOMContentLoaded", function () {
       var loadingMessage = document.getElementById("loading-message");
       loadingMessage.style.display = "block";
-  		
+
       window.addEventListener("load", function () {
       loadingMessage.style.display = "none";
     });
