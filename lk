@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/892f23a568.js"></script>
     <style>
       body {
         background-color:  #0f181f;
@@ -10,6 +11,19 @@
         justify-content: center;
         align-items: center;
         display: flex;
+      }
+
+      .contenedor{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    
+      @media (max-width: 480px) {
+        body{
+          width: 80%;
+        }
       }
       
         .buttonContainer {
@@ -62,16 +76,33 @@
           letter-spacing: 2px;
           font-weight: bold;
           margin-left: 10px;
-          text-indent: 3px;
+          text-indent: 4px;
         }
-        .logout{
-          margin-top: 20px;
-          color: red;
-          background-color: transparent;
-          border: solid 2px red;
-          border-radius: 20px;
-          position: fixed;
-          right: 780px;
+        .fa-arrow-right-from-bracket{
+          color: rgb(255, 0, 0);
+          text-shadow: 3px 3px 10px red;
+          font-size: 40px;
+          font-weight: bold;
+          top: 30px;
+          position: absolute;
+          right: 20px;
+          animation: loga 2s infinite alternate-reverse;
+        }
+        
+        @keyframes loga{
+          33%{
+            color: greenyellow;
+            text-shadow: 3px 3px 10px greenyellow;
+          }
+          66%{
+            color: blue;
+            text-shadow: 3px 3px 10px blue;
+          }
+        }
+
+        .logout:hover{
+          box-shadow: 4px 4px 20px blue;
+          border: none;
         }
 
 
@@ -95,11 +126,11 @@
       <p>ON OFF</p>
       <div class="circleButton"></div>
     </div>
-
-    <a href="/" target="_self" rel="noopener noreferrer">
-        <button class="logout" onclick="cerrarSesion()">CERRAR SESION</button>
-    </a>
   </div>
+  
+  <a href="/" target="_self" rel="noopener noreferrer">
+    <i class="fa-solid fa-arrow-right-from-bracket" onclick="cerrarSesion()"></i>
+  </a>
 
     <script>
         // Al cargar la página, aplicar la clase 'on' según las cookies
@@ -143,9 +174,6 @@
         function cerrarSesion() {
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    location.reload();
-                }
             };
             xhttp.open("GET", "/cerrarSesion", true);
             xhttp.send();
