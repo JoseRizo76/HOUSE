@@ -1,0 +1,184 @@
+body{
+  margin: 0;
+  padding: 0 ;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: url('img.jpg') no-repeat fixed ;
+  /* background: url('https://drive.google.com/uc?export=download&id=1-OnPX-RrzTE9FEF-PIWnAeAr-MvfKGVk') no-repeat center center fixed; */
+}
+
+.contenedor{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarjeta{
+  height: 400px;
+  width: 350px;
+  background-color: #101010;
+  border-radius: 10%;
+  box-shadow: 16px 14px 20px #0000008c;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarjeta::before{
+  content: "";
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  background-image: conic-gradient(red 20deg, transparent 120deg);
+  animation: rotar 2.3s linear infinite;
+}
+
+@keyframes rotar{
+  from{
+      transform: rotate(0deg);
+  }
+  to{
+      transform: rotate(-360deg);
+  }
+}
+
+::placeholder{
+  font-size: 12px;
+  font-style: oblique;
+}
+.tarjeta::after{
+  content: "";
+  position: absolute;
+  height: 390px;
+  width: 340px;
+  background-color: #101010;
+  border-radius: 10%;
+  box-shadow: inset 16px 14px 20px #0000008c;;
+}
+.informacion{
+  height: 380px;
+  width: 320px;
+  background-color: #101010;
+  border-radius: 10%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-user-gear{
+  position: absolute;
+  z-index: 1;
+  color: red;
+  background-color: transparent;
+  top: 130px;
+  left: 30px;
+  font-size: 20px;
+} 
+
+.usuario{
+  position: absolute;
+  z-index: 1;
+  color: red;
+  background-color: transparent;
+  text-align: center;
+  border-radius: 10px;
+  border: solid 2px red;
+  width: 220px;
+  height: 25px;
+  top: 125px;
+  left: 60px;
+} 
+.contrasena{
+  position: absolute;
+  z-index: 1;
+  color: red;
+  background-color: transparent;
+  text-align: center;
+  border-radius: 10px;
+  border: solid 2px red;
+  width: 220px;
+  height: 25px;
+  top: 165px;
+  left: 60px;
+} 
+.fa-key{
+  position: absolute;
+  z-index: 1;
+  color: red;
+  background-color: transparent;
+  top: 170px;
+  left: 30px;
+  font-size: 20px;
+}
+.texto{
+  position: absolute;
+  z-index: 1;
+  color: red;
+  background-color: transparent;
+  top: 80px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.fa-house-lock{
+  position: absolute;
+  z-index: 1;
+  color: red;
+  background-color: transparent;
+  top: 10px;
+  font-size: 60px;
+}
+.enviar{
+  position: absolute;
+  z-index: 1;
+  color: rgb(255, 255, 255);
+  background-color: black;
+  text-align: center;
+  border-radius: 10px;
+  border: solid 2px red;
+  width: 227px;
+  height: 25px;
+  top: 205px;
+  left: 60px;
+  letter-spacing: 2px;
+  font-style: oblique ;
+  font-weight: bold;
+
+} 
+.fa-arrow-right-to-bracket{
+  position: absolute;
+  z-index: 1;
+  color: red;
+  background-color: transparent;
+  top: 10px;
+  font-size: 25px;
+  left: 30px;
+  top: 205px;
+}
+#showPassword{
+  position: absolute;
+  z-index: 1;
+  color: red;
+  background-color: transparent;
+  top: 10px;
+  left: 30px;
+  top: 245px;
+}
+.mostrarc{
+  position: absolute;
+  z-index: 1;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  top: 10px;
+  font-size: 15px;
+  left: 60px;
+  top: 232px;
+}

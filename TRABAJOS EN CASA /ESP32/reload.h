@@ -1,0 +1,95 @@
+String redireccionando = R""(
+  <!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="3;url=/control">
+  <title>LOGIN VERIFY</title>
+  <style>
+    body {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      background-color: black;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 480px) {
+      body p {
+        width: 80%;
+      }
+    }
+
+    p {
+      color: rgb(89, 155, 240);
+      font-style: italic;
+      font-weight: 700;
+      font-size: 25px;
+      border-radius: 20px;
+      padding: 4px;
+      text-shadow: 0px 0px 20px rgb(15, 201, 204);
+      margin: 0px 0px 10px 0px;
+      animation: texto 1.5s infinite alternate;
+    }
+
+    ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    ul li {
+      width: 60px;
+      margin: 0px 0px 0px 0px;
+      height: 60px;
+      background: var(--color);
+      border-radius: 50%;
+      animation: grow 1.6s ease-in-out infinite;
+      animation-delay: var(--delay);
+      box-shadow: 0px 0px 60px var(--color);
+    }
+
+    @keyframes grow {
+
+      0%,
+      40%,
+      100% {
+        transform: scale(0.1);
+      }
+
+      20% {
+        transform: scale(0.5);
+      }
+    }
+
+    @keyframes texto {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.4);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <p>VERIFICANDO CUENTA</p>
+  <ul>
+    <li style="--delay: -1.4s; --color: #ffff00;"></li>
+    <li style="--delay: -1.2s; --color: #76ff03;"></li>
+    <li style="--delay: -1.0s; --color: #f06292;"></li>
+    <li style="--delay: -0.8s; --color: #4fc3f7;"></li>
+    <li style="--delay: -0.6s; --color: #ba68c8;;"></li>
+    <li style="--delay: -0.4s; --color: #f57c00;"></li>
+    <li style="--delay: -0.2s; --color: #673ab7;"></li>
+  </ul>
+</body>
+
+</html>
+
+
+)"";

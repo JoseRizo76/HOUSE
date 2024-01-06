@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CONTROL</title>
+</head>
+<body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: black; 
+      /* background: url('https://drive.google.com/uc?export=download&id=1k1ah7Ou1dCBt4xB910juAncKkpD-S0XU') no-repeat fixed; */
+      background-size: cover;
+    }
+    .boton{
+      color: rgb(255, 255, 255);
+      text-shadow: 4px 4px 5px rgb(255, 3, 3);
+      background-color: black;
+      border-radius: 20px;
+      font-weight: bold;
+      width: 300px;
+      height: 60px;
+      border: none;
+      box-shadow: 6px 6px 20px red;
+    }
+    
+    .informacion{
+      color: white;
+      margin: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      font-style: oblique;
+      letter-spacing: 2px;
+    }
+
+    .boton:hover{
+      box-shadow: 6px 6px 20px blue;
+      border: none;
+      text-shadow: 4px 4px 5px blue;
+      font-size: 20px;
+    }
+    .circleButton {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: red; /* Color cuando está apagado */
+            cursor: pointer;
+            transition: background-color 0.5s, transform 0.5s;
+            margin-right: 10px; /* Espacio entre los botones */
+    }
+
+    .circleButton.on {
+        background-color: green; /* Color cuando está encendido */
+        transform: translateX(50px); /* Efecto deslizante */
+    }
+  </style>
+
+  <div class="circleButton" onclick="toggleActivation(1)"></div>
+  <button class="boton" onclick="controlarLED(1)">LAMPARA </button>
+  <p class="informacion">)"" + led1Estado + R""(</p>
+  <button class="boton" onclick="controlarLED(2)">ABANICO </button>
+  <p class="informacion">)"" + led2Estado + R""(</p>
+  <button class="boton" onclick="controlarLED(3)">SALA </button>
+  <p class="informacion">)"" + led3Estado + R""(</p>
+  <a href="/" target="_self" rel="noopener noreferrer"><button onclick="cerrarSesion()">CERRAR SESION</button></a>
+  <script>
+        function toggleActivation(circleNumber) {
+            var circleButton = document.querySelector('.circleButton:nth-child(' + circleNumber + ')');
+            circleButton.classList.toggle('on');
+        }
+    function controlarLED(led) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          location.reload();
+        }
+      };/**/
+      xhttp.open("GET", "/controlarLED?led=" + led, true);
+      xhttp.send();
+    }
+    
+    function cerrarSesion() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          // Redirigir a la página de inicio de sesión o realizar otras acciones
+          location.reload();
+        }
+      };
+      xhttp.open("GET", "/cerrarSesion", true);
+      xhttp.send();
+    }
+  </script>
+</body>
+</html>
